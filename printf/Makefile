@@ -53,11 +53,12 @@ re: fclean all
 
 
 main: fclean all
-	@gcc $(FILES_MAIN) $(LIBFT)/libft.a
+	@gcc -g $(FILES_MAIN) $(LIBFT)/libft.a
 	@./a.out
 
 test:
-	gcc srcs/new.c srcs/ft_printf.c srcs/flags.c libft/libft.a
+	@rm -rf test
+	@gcc test.c libft/libft.a
 	@./a.out
 
 .PHONY: all clean fclean re

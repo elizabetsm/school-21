@@ -1,54 +1,54 @@
 #include "../includes/ft_printf.h"
 
-void	new(t_struct *st)
-{
-	st->s = ft_memalloc(10);
-	st->q = ft_memalloc(10);
-	st->tmp = ft_memalloc(10);
-	st->str = ft_memalloc(10);
-	st->l = ft_memalloc(10);
-	st->pr = ft_memalloc(10);
-}
-
-void	flags(char *format, t_struct *st)
+void	flags(char *format, t_struct *st, va_list ap)
 {
 	while (format[st->i] >= 32 && format[st->i] <= 48)
 	{
+		printf("st->i = %d\n", st->i);
 		if (format[st->i] == '+')
 			st->f_plus = 1;
-		if (format[st->i] == '-')
+		else if (format[st->i] == '-')
 			st->f_minus = 1;
-		if (format[st->i] == ' ')
-			st->f_space = 1;
-		if (format[st->i] == '#')
+		else if (format[st->i] == ' ')
+			st->f_space = width(format, st);
+		else if (format[st->i] == '#')
 			st->f_resh = 1;
-		if (format[st->i] == '0')
+		else if (format[st->i] == '0')
 			st->f_nul = width(format, st);
 		st->i++;
 	}
+	length(format, st, ap);
 }
 
 void	ft_print(char *format, t_struct *st)
 {
-	// st->i--;
+	st->i = st->i - 2;
 	if (st->f_resh == 1)
 	{
 		if (format[st->i] == 'x')
-			ft_putstr("0x");
+			st->schet = st->schet + ft_putstr("0x");
 		else if (format[st->i] == 'X')
-			ft_putstr("0X");
+			st->schet = st->schet + ft_putstr("0X");
 		else
-			ft_putstr("0");
-		
+			st->schet = st->schet + ft_putstr("0");
 	}
-		// format[st->i] == 'x' ? ft_putstr("0x") :
-		// (format[st->i] == 'X' ? ft_putstr("0X") :
-		// ft_putstr("0"));
-		if (st->f_nul > 0 && st->f_minus != 1)
-			null_print(st);
-	ft_putstr(st->tmp);
-	st->i++;
-	free(st->tmp);
+	if (st->f_nul > 0 && st->f_minus != 1)
+		null_print(st);
+	if (st->f_space == 1)
+		space_print(st);
+	st->schet = st->schet + ft_putstr(st->tmp);
+	ft_free(st);
+	st->i = st->i + 1;
+}
+
+void space_print(t_struct *st)
+{
+	int d;
+
+	int a = ft_strlen(st->tmp);
+	d = st->wdht - ft_strlen(st->tmp);
+	while (d-- > 0)
+		st->schet = st->schet + ft_putchar(' ');
 }
 
 int		width(char *format, t_struct *st)
@@ -83,5 +83,16 @@ void	null_print(t_struct *st)
 
 	d = st->wdht - ft_strlen(st->tmp);
 	while (d-- > 0)
-		ft_putchar('0');
+		st->schet = st->schet + ft_putchar('0');
+}
+
+void	ft_free(t_struct *st)
+{
+	// free(st->tmp);
+	st->f_plus = 0; // триггер
+	st->f_minus = 0;
+	st->f_space = 0;
+	st->f_resh = 0;
+	st->f_nul = 0;
+	st->wdht = 0;
 }

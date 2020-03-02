@@ -8,7 +8,7 @@ void    length(char *format, t_struct *st, va_list ap) //основная фун
         if (format[st->i] == 'd' || format[st->i] == 'i')
         {
             st->a = (char)va_arg(ap, int);
-            specif_di(st, st->a);
+            specif_di(st, st->a, format);
         }
         else if (format[st->i] == 'o' || format[st->i] == 'u' || format[st->i] == 'x' || format[st->i] == 'X')
         {
@@ -22,7 +22,7 @@ void    length(char *format, t_struct *st, va_list ap) //основная фун
         if (format[st->i] == 'd' || format[st->i] == 'i')
         {
             st->a = (short int)va_arg(ap, int);
-            specif_di(st, st->a);
+            specif_di(st, st->a, format);
         }
         else if (format[st->i] == 'o' || format[st->i] == 'u' || format[st->i] == 'x' || format[st->i] == 'X')
         {
@@ -38,7 +38,7 @@ void    length(char *format, t_struct *st, va_list ap) //основная фун
         if (format[st->i] == 'd' || format[st->i] == 'i')
         {
             st->d = va_arg(ap, long long int);
-            specif_di(st, st->d);
+            specif_di(st, st->d, format);
         }
         else if (format[st->i] == 'o' || format[st->i] == 'u' || format[st->i] == 'x' || format[st->i] == 'X')
         {
@@ -48,20 +48,22 @@ void    length(char *format, t_struct *st, va_list ap) //основная фун
     }
 }
 
-void    specif_di(t_struct *st, long long int a) //для сапецификатора d, i
+void    specif_di(t_struct *st, long long int a, char *format) //для сапецификатора d, i
 {
-    st->q = itoa(a);
-    write(1, st->q, ft_strlen(st->q));
+    st->tmp = itoa(a);
+	// ft_print(format, st);
     st->i++;
 }
 
 void    specif_uoxX(t_struct *st, char *format, unsigned long long int a) //для спецификаторов u, o, xX(не работает 16ричная отрицательная)
 {
+	int trig;
+
+	trig = 0;
     if (format[st->i] == 'o')
         octal(a, st);
     else if (format[st->i] == 'x' || format[st->i] == 'X')
     {
-			int trig = 0;
 		if (format[st->i] == 'X')
 			trig = 1;
 		hexadecimal(a, trig, st);

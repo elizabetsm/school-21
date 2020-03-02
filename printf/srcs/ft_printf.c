@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efleta <efleta@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/27 19:09:51 by efleta            #+#    #+#             */
+/*   Updated: 2020/03/02 15:15:58 by efleta           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 int		ft_length(long long int n)
@@ -47,13 +59,54 @@ char	*itoa(long long int n)
 	return (a);
 }
 
+void	ft_printf_sec(char *format, t_struct *st, va_list ap)
+{
+	
+	if (format[st->i] == 'd' || format[st->i] == 'i')
+	{
+		st->a = va_arg(ap, int);
+		specif_di(st, st->a, format);
+	}
+	else if (format[st->i] == 'o' || format[st->i] == 'u' || format[st->i] == 'x' || format[st->i] == 'X')
+	{
+		unsigned int d;
+		d = va_arg(ap, unsigned int);
+		specif_uoxX(st, format, d);
+	}
+	if (format[st->i] == 'p')
+	{
+		st->d = va_arg(ap, long long int);
+		hexadecimal(st->d, 0, st);
+		st->schet = st->schet + ft_putstr("0x");
+		st->schet = st->schet + ft_putstr(st->tmp);
+		st->i++;
+	}
+	ft_print(format, st);
+}
+
+int		ft_print_cs(int trig, t_struct *st, va_list ap)
+{
+	if (trig == 1)
+	{
+		st->s = va_arg(ap, char *);
+		st->schet = st->schet + ft_putstr(st->s);
+		st->i++;
+	}
+	else if (trig == 2)
+	{
+		st->c = va_arg(ap, int);
+		st->schet = st->schet + ft_putchar(st->c);
+		st->i++;
+	}
+	return 0;
+}
+
 int		ft_printf(char *format, ...) //сюда нужно вставить остальные флаги и ширину
 {
 	va_list		ap;
 	t_struct	*st;
 
 	st = (t_struct *)malloc(sizeof(t_struct));
-	// new(st);
 	va_start(ap, format);
 	st->i = 0;
 	while (format[st->i] != '\0')
@@ -66,50 +119,22 @@ int		ft_printf(char *format, ...) //сюда нужно вставить ост�
 				ft_putchar('%');
 				st->i++;
 			}
-			flags(format, st);
-			length(format, st, ap);
-            //check_flags(format, st, ap);
+			flags(format, st, ap);
 			if (format[st->i] == 's')
-			{
-				st->s = va_arg(ap, char *);
-				ft_putstr(st->s);
-				st->i++;
-			}
-			else if (format[st->i] == 'c')
-			{
-				st->c = va_arg(ap, int);
-				ft_putchar(st->c);
-				st->i++;
-			}
-			else if (format[st->i] == 'd' || format[st->i] == 'i')
-			{
-				st->a = va_arg(ap, int);
-				specif_di(st, st->a);
-			}
-			else if (format[st->i] == 'o' || format[st->i] == 'u' || format[st->i] == 'x' || format[st->i] == 'X')
-			{
-				unsigned int d;
-				d = va_arg(ap, unsigned int);
-				specif_uoxX(st, format, d);
-			}
-			if (format[st->i] == 'p')
-			{
-				st->d = va_arg(ap, long long int);
-				hexadecimal(st->d, 0, st);
-				ft_putstr("0x");
-				ft_putstr(st->tmp);
-				st->i++;
-			}
-			ft_print(format, st);
+				ft_print_cs(1, st, ap);
+			if (format[st->i] == 'c')
+				ft_print_cs(2, st, ap);
+			else
+				ft_printf_sec(format, st, ap);
 		}
 		else
 		{
-			ft_putchar(format[st->i]);
+			st->schet = st->schet + ft_putchar(format[st->i]);
 			st->i++;
-		}
+		}	
 	}
 	va_end(ap);
-	return (0);
+	return (st->schet);
 }
 
 int main()
@@ -117,8 +142,10 @@ int main()
     // int *b;
     // int a = 0x10d;
     // b = &a;
-    printf("%#x\n", 10);
-    ft_printf("%#x\n", 10);
-
+    int a = printf("% 10d\n", 15);
+	printf("a = %d\n", a);
+    // ft_printf("%010d\n", 9);
+	int i = ft_printf("% 10d\n", 15);
+	printf("i = %d\n", i);
     return 0;
 }

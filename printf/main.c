@@ -4,6 +4,6 @@
 
 int				main()
 {
-	ft_printf("eygsg", 10);
+	ft_printf("%x", 10);
 	return (0);
 }
