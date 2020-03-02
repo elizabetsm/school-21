@@ -51,6 +51,8 @@ int							ft_length(long long int n);
 void						ft_printf_sec(char *format, t_struct *st, va_list ap);
 int							ft_print_cs(int trig, t_struct *st, va_list ap);
 void						ft_free(t_struct *st);
-void space_print(t_struct *st);
+void						space_print(t_struct *st);
+int							re_putstr(char const *s);
+int							re_putchar(char c);
 
 #endif

@@ -77,8 +77,8 @@ void	ft_printf_sec(char *format, t_struct *st, va_list ap)
 	{
 		st->d = va_arg(ap, long long int);
 		hexadecimal(st->d, 0, st);
-		st->schet = st->schet + ft_putstr("0x");
-		st->schet = st->schet + ft_putstr(st->tmp);
+		st->schet = st->schet + re_putstr("0x");
+		st->schet = st->schet + re_putstr(st->tmp);
 		st->i++;
 	}
 	ft_print(format, st);
@@ -89,13 +89,13 @@ int		ft_print_cs(int trig, t_struct *st, va_list ap)
 	if (trig == 1)
 	{
 		st->s = va_arg(ap, char *);
-		st->schet = st->schet + ft_putstr(st->s);
+		st->schet = st->schet + re_putstr(st->s);
 		st->i++;
 	}
 	else if (trig == 2)
 	{
 		st->c = va_arg(ap, int);
-		st->schet = st->schet + ft_putchar(st->c);
+		st->schet = st->schet + re_putchar(st->c);
 		st->i++;
 	}
 	return 0;
@@ -129,7 +129,7 @@ int		ft_printf(char *format, ...) //сюда нужно вставить ост�
 		}
 		else
 		{
-			st->schet = st->schet + ft_putchar(format[st->i]);
+			st->schet = st->schet + re_putchar(format[st->i]);
 			st->i++;
 		}	
 	}

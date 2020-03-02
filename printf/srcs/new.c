@@ -26,17 +26,17 @@ void	ft_print(char *format, t_struct *st)
 	if (st->f_resh == 1)
 	{
 		if (format[st->i] == 'x')
-			st->schet = st->schet + ft_putstr("0x");
+			st->schet = st->schet + re_putstr("0x");
 		else if (format[st->i] == 'X')
-			st->schet = st->schet + ft_putstr("0X");
+			st->schet = st->schet + re_putstr("0X");
 		else
-			st->schet = st->schet + ft_putstr("0");
+			st->schet = st->schet + re_putstr("0");
 	}
 	if (st->f_nul > 0 && st->f_minus != 1)
 		null_print(st);
 	if (st->f_space == 1)
 		space_print(st);
-	st->schet = st->schet + ft_putstr(st->tmp);
+	st->schet = st->schet + re_putstr(st->tmp);
 	ft_free(st);
 	st->i = st->i + 1;
 }
@@ -48,7 +48,7 @@ void space_print(t_struct *st)
 	int a = ft_strlen(st->tmp);
 	d = st->wdht - ft_strlen(st->tmp);
 	while (d-- > 0)
-		st->schet = st->schet + ft_putchar(' ');
+		st->schet = st->schet + re_putchar(' ');
 }
 
 int		width(char *format, t_struct *st)
@@ -72,7 +72,7 @@ int		width(char *format, t_struct *st)
 		|| format[i] == 'X')
 			break ;
 	}
-	st->i = st->i + j - 1;
+	st->i = st->i + j;
 	st->wdht = ft_atoi(wdht);
 	return (1);
 }
@@ -83,7 +83,7 @@ void	null_print(t_struct *st)
 
 	d = st->wdht - ft_strlen(st->tmp);
 	while (d-- > 0)
-		st->schet = st->schet + ft_putchar('0');
+		st->schet = st->schet + re_putchar('0');
 }
 
 void	ft_free(t_struct *st)
