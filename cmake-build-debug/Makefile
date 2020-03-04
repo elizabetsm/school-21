@@ -1689,33 +1689,6 @@ printf/libft/ft_toupper.c.s:
 	$(MAKE) -f CMakeFiles/printf_1.dir/build.make CMakeFiles/printf_1.dir/printf/libft/ft_toupper.c.s
 .PHONY : printf/libft/ft_toupper.c.s
 
-printf/main.o: printf/main.c.o
-
-.PHONY : printf/main.o
-
-# target to build an object file
-printf/main.c.o:
-	$(MAKE) -f CMakeFiles/printf_1.dir/build.make CMakeFiles/printf_1.dir/printf/main.c.o
-.PHONY : printf/main.c.o
-
-printf/main.i: printf/main.c.i
-
-.PHONY : printf/main.i
-
-# target to preprocess a source file
-printf/main.c.i:
-	$(MAKE) -f CMakeFiles/printf_1.dir/build.make CMakeFiles/printf_1.dir/printf/main.c.i
-.PHONY : printf/main.c.i
-
-printf/main.s: printf/main.c.s
-
-.PHONY : printf/main.s
-
-# target to generate assembly for a file
-printf/main.c.s:
-	$(MAKE) -f CMakeFiles/printf_1.dir/build.make CMakeFiles/printf_1.dir/printf/main.c.s
-.PHONY : printf/main.c.s
-
 printf/srcs/flags.o: printf/srcs/flags.c.o
 
 .PHONY : printf/srcs/flags.o
@@ -2007,9 +1980,6 @@ help:
 	@echo "... printf/libft/ft_toupper.o"
 	@echo "... printf/libft/ft_toupper.i"
 	@echo "... printf/libft/ft_toupper.s"
-	@echo "... printf/main.o"
-	@echo "... printf/main.i"
-	@echo "... printf/main.s"
 	@echo "... printf/srcs/flags.o"
 	@echo "... printf/srcs/flags.i"
 	@echo "... printf/srcs/flags.s"

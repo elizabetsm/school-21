@@ -62,7 +62,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cseabass/printf_1/printf/libft/ft_strtrim.c" "/Users/cseabass/printf_1/cmake-build-debug/CMakeFiles/printf_1.dir/printf/libft/ft_strtrim.c.o"
   "/Users/cseabass/printf_1/printf/libft/ft_tolower.c" "/Users/cseabass/printf_1/cmake-build-debug/CMakeFiles/printf_1.dir/printf/libft/ft_tolower.c.o"
   "/Users/cseabass/printf_1/printf/libft/ft_toupper.c" "/Users/cseabass/printf_1/cmake-build-debug/CMakeFiles/printf_1.dir/printf/libft/ft_toupper.c.o"
-  "/Users/cseabass/printf_1/printf/main.c" "/Users/cseabass/printf_1/cmake-build-debug/CMakeFiles/printf_1.dir/printf/main.c.o"
   "/Users/cseabass/printf_1/printf/srcs/flags.c" "/Users/cseabass/printf_1/cmake-build-debug/CMakeFiles/printf_1.dir/printf/srcs/flags.c.o"
   "/Users/cseabass/printf_1/printf/srcs/ft_printf.c" "/Users/cseabass/printf_1/cmake-build-debug/CMakeFiles/printf_1.dir/printf/srcs/ft_printf.c.o"
   "/Users/cseabass/printf_1/printf/srcs/new.c" "/Users/cseabass/printf_1/cmake-build-debug/CMakeFiles/printf_1.dir/printf/srcs/new.c.o"

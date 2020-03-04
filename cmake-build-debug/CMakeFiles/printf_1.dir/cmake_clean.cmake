@@ -57,7 +57,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/printf_1.dir/printf/libft/ft_strtrim.c.o"
   "CMakeFiles/printf_1.dir/printf/libft/ft_tolower.c.o"
   "CMakeFiles/printf_1.dir/printf/libft/ft_toupper.c.o"
-  "CMakeFiles/printf_1.dir/printf/main.c.o"
   "CMakeFiles/printf_1.dir/printf/srcs/flags.c.o"
   "CMakeFiles/printf_1.dir/printf/srcs/ft_printf.c.o"
   "CMakeFiles/printf_1.dir/printf/srcs/new.c.o"

@@ -264,9 +264,6 @@
 		<Unit filename="/Users/cseabass/printf_1/printf/libft/libft.h">
 			<Option target="printf_1"/>
 		</Unit>
-		<Unit filename="/Users/cseabass/printf_1/printf/main.c">
-			<Option target="printf_1"/>
-		</Unit>
 		<Unit filename="/Users/cseabass/printf_1/printf/srcs/flags.c">
 			<Option target="printf_1"/>
 		</Unit>

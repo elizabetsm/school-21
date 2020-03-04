@@ -70,5 +70,4 @@ add_executable(printf_1
         printf/srcs/flags.c
         printf/srcs/ft_printf.c
         printf/srcs/new.c
-        printf/srcs/re_func.c
-        printf/main.c)
+        printf/srcs/re_func.c)
