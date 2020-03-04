@@ -142,10 +142,10 @@ int main()
     // int *b;
     // int a = 0x10d;
     // b = &a;
-    int a = printf("%010d\n", 15);
+    int a = printf("%10hx\n", 65540);
 	printf("a = %d\n", a);
     // ft_printf("%010d\n", 9);
-	int i = ft_printf("% 10d\n", 15);
+	int i = ft_printf("%10hx\n", 65540);
 	printf("i = %d\n", i);
     return 0;
 }

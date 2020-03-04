@@ -24,6 +24,7 @@ typedef struct				s_struct{
 	char					*l;
 	int						f;
 	char					*pr;
+	char 					specif;
 	int						f_plus; // триггер
 	int						f_minus;
 	int						f_space;
