@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="431cd2c8-d6bb-4330-9cde-823820d0efa4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/srcs/re_func.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/ft_printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/ft_printf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_printf.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_printf.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/new.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/new.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1YRXISHwxM6EYn22h4RdmWMZ7rX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="431cd2c8-d6bb-4330-9cde-823820d0efa4" name="Default Changelist" comment="" />
+      <created>1582906302951</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582906302951</updated>
+      <workItem from="1582906307989" duration="1068000" />
+      <workItem from="1582907476067" duration="156000" />
+      <workItem from="1582912576313" duration="1668000" />
+      <workItem from="1583156572413" duration="3845000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1463" y="356" key="#C/C++" timestamp="1582906945244">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="1463" y="356" key="#C/C++/0.23.2560.1337@0.23.2560.1337" timestamp="1582906945244" />
+    <state x="789" y="330" key="SettingsEditor" timestamp="1582912614709">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="789" y="330" key="SettingsEditor/0.23.2560.1337@0.23.2560.1337" timestamp="1582912614709" />
+    <state x="936" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1583156582255">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="936" y="525" key="com.intellij.ide.util.TipDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1583156582255" />
+    <state x="1528" y="327" width="670" height="676" key="search.everywhere.popup" timestamp="1583160093555">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="1528" y="327" width="670" height="676" key="search.everywhere.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1583160093555" />
+  </component>
+</project>
