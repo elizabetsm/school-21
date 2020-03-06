@@ -9,8 +9,8 @@ void	flags(char *format, t_struct *st, va_list ap)
 			st->f_plus = 1;
 		else if (format[st->i] == '-')
 			st->f_minus = 1;
-//		else if (format[st->i] == ' ')
-//			st->f_space = width(format, st);
+		else if (format[st->i] == ' ')
+			st->f_space = 1;
 		else if (format[st->i] == '#')
 			st->f_resh = 1;
 		else if (format[st->i] == '0')
@@ -31,10 +31,12 @@ void	ft_print(char *format, t_struct *st)
 
 	i = 0;
 	st->i = st->i - 1;
-	printf("(ft_print)st->i = %d\n", st->i);
+	if (st->f_minus == 1)
+		st->schet = st->schet + re_putstr(st->tmp);
+	//printf("(ft_print)st->i = %d\n", st->i);
 	 if (st->f_nul > 0 && st->f_minus != 1)
 	 	i++;
-	 else
+	 else if (st->f_space == 1 || st->wdht > 0)
 	 	space_print(st);
 	if (st->f_resh == 1)
 	{
@@ -47,7 +49,8 @@ void	ft_print(char *format, t_struct *st)
 	}
 	if (i > 0)
 		null_print(st);
-	st->schet = st->schet + re_putstr(st->tmp);
+	if (st->f_minus == 0)
+		st->schet = st->schet + re_putstr(st->tmp);
 	ft_free(st);
 	st->i = st->i + 1;
 }
@@ -87,6 +90,7 @@ void		width(char *format, t_struct *st)
 
 	i = st->i;
 	j = 0;
+	st->wdht = 0;
 	wdht = ft_memalloc(20);
 	while (format[i] != '\0' && format[i] != '%')
 	{
@@ -119,4 +123,5 @@ void	ft_free(t_struct *st)
 	st->f_resh = 0;
 	st->f_nul = 0;
 	st->wdht = 0;
+	free(st->tmp);
 }

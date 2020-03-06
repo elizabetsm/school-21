@@ -87,9 +87,11 @@ int		hexadecimal(long long int a, int trig, t_struct *st) //%X  33+ stroki
 	int	f;
 	
 	f = 0;
-	if (a == 0 || a == 4294967296)
+	if (a == 0)
 	{
-		ft_putchar('0');
+		st->tmp = ft_memalloc(5);
+		st->tmp[0] = '0';
+		//ft_putchar('0');
 		return 0;
 	}
 	st->l = ft_memalloc(2);

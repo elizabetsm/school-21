@@ -101,6 +101,12 @@ int		ft_print_cs(int trig, t_struct *st, va_list ap)
 	return 0;
 }
 
+void	init(t_struct *st)
+{
+	st->tmp = ft_memalloc(20);
+	st->a = 0;
+}
+
 int		ft_printf(char *format, ...) //сюда нужно вставить остальные флаги и ширину
 {
 	va_list		ap;
@@ -109,15 +115,18 @@ int		ft_printf(char *format, ...) //сюда нужно вставить ост�
 	st = (t_struct *)malloc(sizeof(t_struct));
 	va_start(ap, format);
 	st->i = 0;
+
 	while (format[st->i] != '\0')
 	{
+		init(st);
 		if (format[st->i] == '%')
 		{
 			st->i++;
 			if (format[st->i] == '%')
 			{
-				ft_putchar('%');
+				st->schet += re_putchar('%');
 				st->i++;
+				continue ;
 			}
 			flags(format, st, ap);
 			width(format, st);
@@ -144,9 +153,9 @@ int main()
     // int *b;
     // int a = 0x10d;
     // b = &a;
-    int a = printf("%x\n", 4294967296);
+    int a = printf("%6%\n");
 	printf("a = %d\n", a);
-	int i = ft_printf("%x\n", 4294967296);
+	int i = ft_printf("%6%\n");
 	printf("i = %d\n", i);
     return 0;
 }

@@ -28,7 +28,7 @@ stdlib.h
 string.h
 -
 
-/Users/cseabass/printf_1/printf/srcs/new.c
+/Users/cseabass/printf_1/printf/srcs/ft_printf.c
 ../includes/ft_printf.h
 /Users/cseabass/printf_1/printf/includes/ft_printf.h
 
