@@ -15,14 +15,16 @@ LIBFT = libft
 FILES = ft_printf.c \
 flags.c \
 new.c \
+re_func.c \
 
 FILES_MAIN = srcs/flags.c \
 srcs/ft_printf.c \
 srcs/new.c \
+srcs/re_func.c \
 
-SRCS = srcs/ft_printf.c srcs/new.c srcs/flags.c
+SRCS = srcs/ft_printf.c srcs/new.c srcs/flags.c srcs/re_func.c
 
-OBJS = srcs/ft_printf.o srcs/new.o srcs/flags.o
+OBJS = srcs/ft_printf.o srcs/new.o srcs/flags.o srcs/re_func.o
 
 # SRCS = $(addprefix $(DIR_S)/,$(FILES))
 
@@ -55,6 +57,9 @@ re: fclean all
 main: fclean all
 	@gcc -g $(FILES_MAIN) $(LIBFT)/libft.a
 	@./a.out
+
+del: fclean
+	@rm a.out
 
 test:
 	@rm -rf test

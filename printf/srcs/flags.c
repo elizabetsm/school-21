@@ -61,7 +61,11 @@ void    specif_uoxX(t_struct *st, char *format, unsigned long long int a) //дл
 
 	trig = 0;
     if (format[st->i] == 'o')
-        octal(a, st);
+	{
+    	st->specif = 'o';
+		octal(a, st);
+		st->i++;
+	}
     else if (format[st->i] == 'x' || format[st->i] == 'X')
     {
 		if (format[st->i] == 'X')
@@ -70,8 +74,10 @@ void    specif_uoxX(t_struct *st, char *format, unsigned long long int a) //дл
 		st->i++;
 	}
 	else if (format[st->i] == 'u')
+	{
 		st->tmp = itoa(a);
-	st->i++;
+		st->i++;
+	}
 }
 
 int		hexadecimal(long long int a, int trig, t_struct *st) //%X  33+ stroki

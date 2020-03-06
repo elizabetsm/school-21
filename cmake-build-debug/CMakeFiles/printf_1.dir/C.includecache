@@ -20,6 +20,7 @@ stdlib.h
 ../libft/libft.h
 /Users/cseabass/printf_1/printf/libft/libft.h
 
+<<<<<<< HEAD
 /Users/cseabass/printf_1/printf/libft/ft_atoi.c
 libft.h
 /Users/cseabass/printf_1/printf/libft/libft.h
@@ -254,6 +255,8 @@ libft.h
 libft.h
 /Users/cseabass/printf_1/printf/libft/libft.h
 
+=======
+>>>>>>> asdf
 /Users/cseabass/printf_1/printf/libft/libft.h
 unistd.h
 -
@@ -262,14 +265,18 @@ stdlib.h
 string.h
 -
 
+<<<<<<< HEAD
 /Users/cseabass/printf_1/printf/srcs/flags.c
 ../includes/ft_printf.h
 /Users/cseabass/printf_1/printf/includes/ft_printf.h
 
+=======
+>>>>>>> asdf
 /Users/cseabass/printf_1/printf/srcs/ft_printf.c
 ../includes/ft_printf.h
 /Users/cseabass/printf_1/printf/includes/ft_printf.h
 
+<<<<<<< HEAD
 /Users/cseabass/printf_1/printf/srcs/new.c
 ../includes/ft_printf.h
 /Users/cseabass/printf_1/printf/includes/ft_printf.h
@@ -278,3 +285,5 @@ string.h
 ../includes/ft_printf.h
 /Users/cseabass/printf_1/printf/includes/ft_printf.h
 
+=======
+>>>>>>> asdf
