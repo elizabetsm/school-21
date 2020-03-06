@@ -120,6 +120,8 @@ int		ft_printf(char *format, ...) //сюда нужно вставить ост�
 				st->i++;
 			}
 			flags(format, st, ap);
+			width(format, st);
+			length(format, st, ap);
 			if (format[st->i] == 's')
 				ft_print_cs(1, st, ap);
 			if (format[st->i] == 'c')
@@ -142,24 +144,9 @@ int main()
     // int *b;
     // int a = 0x10d;
     // b = &a;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    int a = printf("% 10d\n", 15);
+    int a = printf("%x\n", 4294967296);
 	printf("a = %d\n", a);
-    // ft_printf("%010d\n", 9);
-	int i = ft_printf("% 10d\n", 15);
-=======
-    int a = printf("% 10hx\n", 65540);
-	printf("a = %d\n", a);
-    // ft_printf("%010d\n", 9);
-	int i = ft_printf("% 10hx\n", 65540);
->>>>>>> Stashed changes
-=======
-    int a = printf("%10hx\n", 65540);
-	printf("a = %d\n", a);
-    // ft_printf("%010d\n", 9);
-	int i = ft_printf("%10hx\n", 65540);
->>>>>>> asdf
+	int i = ft_printf("%x\n", 4294967296);
 	printf("i = %d\n", i);
     return 0;
 }

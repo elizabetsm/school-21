@@ -68,6 +68,7 @@ void    specif_uoxX(t_struct *st, char *format, unsigned long long int a) //дл
 	}
     else if (format[st->i] == 'x' || format[st->i] == 'X')
     {
+    	st->specif = 'x';
 		if (format[st->i] == 'X')
 			trig = 1;
 		hexadecimal(a, trig, st);
@@ -86,7 +87,7 @@ int		hexadecimal(long long int a, int trig, t_struct *st) //%X  33+ stroki
 	int	f;
 	
 	f = 0;
-	if (a == 0)
+	if (a == 0 || a == 4294967296)
 	{
 		ft_putchar('0');
 		return 0;

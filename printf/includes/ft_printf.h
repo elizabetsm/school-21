@@ -46,7 +46,7 @@ void						specif_uoxX(t_struct *st, char *format, unsigned long long int a);
 void						length(char *format, t_struct *st, va_list ap);
 void						flags(char *format, t_struct *st, va_list ap);
 void						ft_print(char *format, t_struct *st);
-int							width(char *format, t_struct *st);
+void						width(char *format, t_struct *st);
 void						null_print(t_struct *st);
 int							ft_length(long long int n);
 void						ft_printf_sec(char *format, t_struct *st, va_list ap);
