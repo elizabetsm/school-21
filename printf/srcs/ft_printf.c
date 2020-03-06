@@ -6,7 +6,7 @@
 /*   By: efleta <efleta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 19:09:51 by efleta            #+#    #+#             */
-/*   Updated: 2020/03/06 16:56:27 by efleta           ###   ########.fr       */
+/*   Updated: 2020/03/06 17:24:13 by efleta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,15 +143,6 @@ int main()
 {
     int a = printf("%- 15d.\n", 15);
 	printf("a = %d\n", a);
-    // ft_printf("%010d\n", 9);
-	// int i = ft_printf("% 10d\n", 15);
-    // int a = printf("% 10hx\n", 65540);
-	// printf("a = %d\n", a);
-    // ft_printf("%010d\n", 9);
-	// int i = ft_printf("% 10hx\n", 65540);
-    // int a = printf("%10hx\n", 65540);
-	// printf("a = %d\n", a);
-    // ft_printf("%010d\n", 9);
 	int i = ft_printf("{Magenta}%-15d{eoc} s yr qwur \n", 65540);
 	printf("i = %d\n", i);
     return 0;
