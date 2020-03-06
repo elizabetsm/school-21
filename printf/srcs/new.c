@@ -42,6 +42,8 @@ void	ft_print(char *format, t_struct *st)
 	}
 	if (st->f_nul > 0 && st->f_minus != 1)
 		null_print(st);
+	// else if ((st->f_nul > 0 && st->f_minus == 1) || 
+	// (st->f_minus == 1 && st->f_space > 0))
 	st->schet = st->schet + re_putstr(st->tmp);
 	ft_free(st);
 	st->i = st->i + 1;

@@ -16,11 +16,13 @@ FILES = ft_printf.c \
 flags.c \
 new.c \
 re_func.c \
+color_print.c \
 
 FILES_MAIN = srcs/flags.c \
 srcs/ft_printf.c \
 srcs/new.c \
 srcs/re_func.c \
+srcs/color_print.c \
 
 SRCS = srcs/ft_printf.c srcs/new.c srcs/flags.c srcs/re_func.c
 

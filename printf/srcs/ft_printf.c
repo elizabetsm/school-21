@@ -6,7 +6,7 @@
 /*   By: efleta <efleta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 19:09:51 by efleta            #+#    #+#             */
-/*   Updated: 2020/03/02 15:15:58 by efleta           ###   ########.fr       */
+/*   Updated: 2020/03/06 16:56:27 by efleta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,8 @@ int		ft_printf(char *format, ...) //сюда нужно вставить ост�
 	st->i = 0;
 	while (format[st->i] != '\0')
 	{
+		if (format[st->i] == '{')
+			proverka(format, st);
 		if (format[st->i] == '%')
 		{
 			st->i++;
@@ -139,27 +141,18 @@ int		ft_printf(char *format, ...) //сюда нужно вставить ост�
 
 int main()
 {
-    // int *b;
-    // int a = 0x10d;
-    // b = &a;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    int a = printf("% 10d\n", 15);
+    int a = printf("%- 15d.\n", 15);
 	printf("a = %d\n", a);
     // ft_printf("%010d\n", 9);
-	int i = ft_printf("% 10d\n", 15);
-=======
-    int a = printf("% 10hx\n", 65540);
-	printf("a = %d\n", a);
+	// int i = ft_printf("% 10d\n", 15);
+    // int a = printf("% 10hx\n", 65540);
+	// printf("a = %d\n", a);
     // ft_printf("%010d\n", 9);
-	int i = ft_printf("% 10hx\n", 65540);
->>>>>>> Stashed changes
-=======
-    int a = printf("%10hx\n", 65540);
-	printf("a = %d\n", a);
+	// int i = ft_printf("% 10hx\n", 65540);
+    // int a = printf("%10hx\n", 65540);
+	// printf("a = %d\n", a);
     // ft_printf("%010d\n", 9);
-	int i = ft_printf("%10hx\n", 65540);
->>>>>>> asdf
+	int i = ft_printf("{Magenta}%-15d{eoc} s yr qwur \n", 65540);
 	printf("i = %d\n", i);
     return 0;
 }

@@ -133,7 +133,7 @@ int		octal(unsigned long long int a, t_struct *st)
 	if (a == 0)
 	{
 		ft_putchar('0');
-		return 0;
+		return (0);
 	}
 	st->str = ft_memalloc(100);
 	while (a > 0)

@@ -32,6 +32,7 @@ typedef struct				s_struct{
 	int						f_nul;
 	int						wdht; //ширина для длинны типа 0 или пробел
 	int						schet;// для ретерна
+	char					*color;
 }							t_struct;
 
 int 						ft_printf(char *format, ...);
@@ -55,5 +56,7 @@ void						ft_free(t_struct *st);
 void						space_print(t_struct *st);
 int							re_putstr(char const *s);
 int							re_putchar(char c);
+void						proverka(char *format, t_struct *st);
+void						color_print(t_struct *st);
 
 #endif
