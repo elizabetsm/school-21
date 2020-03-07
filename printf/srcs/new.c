@@ -3,7 +3,7 @@
 void	flags(char *format, t_struct *st, va_list ap)
 {
 	//printf("st->i = %d\n", st->i);
-	while (format[st->i] >= 32 && format[st->i] <= 48)
+	while (format[st->i] >= 32 && format[st->i] <= 48 && format[st->i] != 37)
 	{
 		if (format[st->i] == '+')
 			st->f_plus = 1;
@@ -38,7 +38,7 @@ void	ft_print(char *format, t_struct *st)
 	 	i++;
 	 else if (st->f_space == 1 || st->wdht > 0)
 	 	space_print(st);
-	if (st->f_resh == 1)
+	if (st->f_resh == 1 && st->tmp[0] != '0')
 	{
 		if (format[st->i] == 'x')
 			st->schet = st->schet + re_putstr("0x");

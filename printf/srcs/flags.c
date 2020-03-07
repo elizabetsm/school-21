@@ -1,6 +1,7 @@
 #include "../includes/ft_printf.h"
 
-void    length(char *format, t_struct *st, va_list ap) //основная функция обработки флагов
+int    length(char *format, t_struct *st, va_list ap) //основная функция
+// обработки флагов
 {
     if (format[st->i] == 'h' && format[st->i + 1] == 'h')
     {
@@ -46,6 +47,9 @@ void    length(char *format, t_struct *st, va_list ap) //основная фун
             specif_uoxX(st, format, st->o);
         }
     }
+    else
+		return (0);
+	return (1);
 }
 
 void    specif_di(t_struct *st, long long int a, char *format) //для сапецификатора d, i

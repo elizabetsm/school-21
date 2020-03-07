@@ -61,7 +61,7 @@ char	*itoa(long long int n)
 
 void	ft_printf_sec(char *format, t_struct *st, va_list ap)
 {
-	
+	//printf("st->i = %d\n", st->i);
 	if (format[st->i] == 'd' || format[st->i] == 'i')
 	{
 		st->a = va_arg(ap, int);
@@ -107,21 +107,51 @@ void	init(t_struct *st)
 	st->a = 0;
 }
 
+void	specifier(char *format, t_struct *st, va_list ap)
+{
+	//printf("st->i = %d\n", st->i);
+	if (format[st->i] != 's' && format[st->i] != 'c' && format[st->i] != 'p' &&
+		format[st->i] != 'd' && format[st->i] != 'i' &&
+		format[st->i] != 'o' && format[st->i] != 'u' &&
+		format[st->i] != 'x' && format[st->i] != 'X' && format[st->i] !=
+		'f')
+	{
+		st->tmp[0] = format[st->i];
+		ft_print(format, st);
+//		st->schet = st->schet + re_putchar(format[st->i]);
+		st->i++;
+		return ;
+	}
+	if (format[st->i] == 's')
+		ft_print_cs(1, st, ap);
+	else if (format[st->i] == 'c')
+		ft_print_cs(2, st, ap);
+	else
+		ft_printf_sec(format, st, ap);
+
+}
+
 int		ft_printf(char *format, ...) //сюда нужно вставить остальные флаги и ширину
 {
 	va_list		ap;
 	t_struct	*st;
+	int i;
+	int j;
 
 	st = (t_struct *)malloc(sizeof(t_struct));
 	va_start(ap, format);
 	st->i = 0;
-
 	while (format[st->i] != '\0')
+		st->i++;
+	j = st->i;
+	st->i = 0;
+	while (st->i < j)
 	{
 		init(st);
 		if (format[st->i] == '%')
 		{
 			st->i++;
+
 			if (format[st->i] == '%')
 			{
 				st->schet += re_putchar('%');
@@ -130,13 +160,18 @@ int		ft_printf(char *format, ...) //сюда нужно вставить ост�
 			}
 			flags(format, st, ap);
 			width(format, st);
-			length(format, st, ap);
-			if (format[st->i] == 's')
-				ft_print_cs(1, st, ap);
-			if (format[st->i] == 'c')
-				ft_print_cs(2, st, ap);
+			//printf("st->i = %d\n", st->i);
+			i = length(format, st, ap);
+			if (i == 0)
+				specifier(format, st, ap);
 			else
-				ft_printf_sec(format, st, ap);
+				ft_print(format, st);
+//			if (format[st->i] == 's')
+//				ft_print_cs(1, st, ap);
+//			if (format[st->i] == 'c')
+//				ft_print_cs(2, st, ap);
+//			else
+//				ft_printf_sec(format, st, ap);
 		}
 		else
 		{
@@ -153,9 +188,9 @@ int main()
     // int *b;
     // int a = 0x10d;
     // b = &a;
-    int a = printf("%6%\n");
-	printf("a = %d\n", a);
-	int i = ft_printf("%6%\n");
-	printf("i = %d\n", i);
+    int a = printf("%#-x", 567);
+	printf("\na = %d\n", a);
+	int i = ft_printf("%#-x", 567);
+	printf("\ni = %d\n", i);
     return 0;
 }
