@@ -183,14 +183,14 @@ int		ft_printf(char *format, ...) //сюда нужно вставить ост�
 	return (st->schet);
 }
 
-int main()
-{
-    // int *b;
-    // int a = 0x10d;
-    // b = &a;
-    int a = printf("%#-x", 567);
-	printf("\na = %d\n", a);
-	int i = ft_printf("%#-x", 567);
-	printf("\ni = %d\n", i);
-    return 0;
-}
+//int main()
+//{
+//    // int *b;
+//    // int a = 0x10d;
+//    // b = &a;
+//    int a = printf("%#-x", 567);
+//	printf("\na = %d\n", a);
+//	int i = ft_printf("%#-x", 567);
+//	printf("\ni = %d\n", i);
+//    return 0;
+//}
