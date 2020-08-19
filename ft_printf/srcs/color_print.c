@@ -44,3 +44,5 @@ void	color_print(t_struct *st)
 	if (ft_strcmp(st->color, "eoc") == 0)
 		re_putstr("\033[0m");
 }
+
+
